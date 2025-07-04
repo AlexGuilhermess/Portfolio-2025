@@ -69,5 +69,36 @@
       </form>
     </section>
   </div>
+  <script>
+  // Quando a página carregar
+  document.addEventListener("DOMContentLoaded", function () {
+    const links = document.querySelectorAll("nav a");
+    const sections = document.querySelectorAll("section");
+
+    // Esconde todas as seções
+    function esconderTodas() {
+      sections.forEach(sec => sec.style.display = "none");
+    }
+
+    // Exibe a seção ativa com base no ID
+    function mostrarSecao(id) {
+      esconderTodas();
+      const secao = document.querySelector(id);
+      if (secao) secao.style.display = "block";
+    }
+
+    // Ao clicar no link, mostra só a seção clicada
+    links.forEach(link => {
+      link.addEventListener("click", function (e) {
+        e.preventDefault(); // Evita scroll automático
+        const alvo = this.getAttribute("href");
+        mostrarSecao(alvo);
+      });
+    });
+
+    // Exibe a seção inicial padrão
+    mostrarSecao("#sobre");
+  });
+</script>
 </body>
 </html>
