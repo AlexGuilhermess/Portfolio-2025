@@ -6,28 +6,68 @@
   <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
+  <div class="container">
+    <header>
+      <img src="img/foto-perfil-redonda.png" alt="Foto de Perfil" class="foto-perfil">
+      <h1>Alex Guilherme</h1>
+      <p>Estudante de Análise e Desenvolvimento de Sistemas</p>
+    </header>
 
-  <header>
     <nav>
       <ul>
-        <!-- Menu de navegação visível em todas as páginas -->
-        <li><a href="index.html">Início</a></li>
-        <li><a href="sobre.html">Sobre mim</a></li>
-        <li><a href="formacao.html">Formação</a></li>
-        <li><a href="portfolio.html">Portfólio</a></li>
-        <li><a href="contato.html">Contato</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#formacao">Formação</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#contato">Contato</a></li>
       </ul>
     </nav>
-  </header>
 
-  <main>
-    <h1>Bem-vindo ao meu Portfólio!</h1>
-    <p>Este site foi desenvolvido como atividade prática da disciplina Fundamentos da Programação Web.</p>
-  </main>
+    <section id="sobre">
+      <h2>Sobre Mim</h2>
+      <p>Meu nome é Alex Guilherme, tenho 25 anos e atualmente curso Análise e Desenvolvimento de Sistemas. 
+         Sou apaixonado por tecnologia, desenvolvimento web e sempre estou buscando evoluir como programador.</p>
+    </section>
 
-  <footer>
-    <p>© 2024 Alex Guilherme</p>
-  </footer>
+    <section id="formacao">
+      <h2>Formação</h2>
+      <ul>
+        <li>Cursando Análise e Desenvolvimento de Sistemas</li>
+        <li>Inglês intermediário</li>
+        <li>Conhecimentos: HTML, CSS, Python, JavaScript</li>
+      </ul>
+    </section>
 
+    <section id="projetos">
+      <h2>Portfólio</h2>
+
+      <div class="card">
+        <h3>Sistema de Loja de Livros</h3>
+        <p>Sistema de Livraria feito em Python.</p>
+        <a href="#">Ver projeto</a>
+      </div>
+
+      <div class="card">
+        <h3>Sistema de Loja de Xerox</h3>
+        <p>Sistema de Xerox desenvolvido em Python.</p>
+        <a href="#">Ver projeto</a>
+      </div>
+    </section>
+
+    <section id="contato">
+      <h2>Contato</h2>
+      <form>
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome">
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email">
+
+        <label for="mensagem">Mensagem</label>
+        <textarea id="mensagem" name="mensagem"></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </div>
 </body>
 </html>
