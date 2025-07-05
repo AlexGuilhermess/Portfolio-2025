@@ -3,16 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <title>Alex Guilherme - Portfólio</title>
+  <!-- Link para o arquivo de estilo CSS -->
   <link rel="stylesheet" href="cssestilo.css">
 </head>
 <body>
   <div class="container">
     <header>
+      <!-- Foto de perfil e título da página -->
       <img src="img/foto-perfil-redonda.png" alt="Foto de Perfil" class="foto-perfil">
       <h1>Alex Guilherme</h1>
       <p>Estudante de Análise e Desenvolvimento de Sistemas</p>
     </header>
 
+    <!-- Menu de navegação -->
     <nav>
       <ul>
         <li><a href="#inicio">Início</a></li>
@@ -22,40 +25,45 @@
       </ul>
     </nav>
 
+    <!-- Seção sobre mim -->
     <section id="inicio">
       <h2>Sobre Mim</h2>
       <p>Meu nome é Alex Guilherme, sou estudante de Análise e Desenvolvimento de Sistemas. Tenho grande interesse pela área e estou constantemente me desafiando a aprender mais sobre criação de sites, sistemas e lógica de programação.
 Encaro a tecnologia como uma ferramenta de transformação, e gosto de entender como as coisas funcionam “por trás dos bastidores”. Tenho perfil curioso, gosto de experimentar, testar ideias e principalmente de ver resultados concretos acontecendo na prática. Estou sempre em busca de crescimento, tanto técnico quanto pessoal.</p>
     </section>
 
+    <!-- Seção de formação -->
     <section id="formacao">
       <h2>Formação</h2>
       <ul>
-  <li>Cursando Análise e Desenvolvimento de Sistemas</li>
-  <li>Inglês em desenvolvimento (estudando atualmente)</li>
-  <li>Conhecimentos: HTML, CSS, JavaScript, Python, Banco de Dados</li>
-  <li>Power BI - Data B(2022)</li>
-  <li>Dashboard - Hashtag Treinamentos (2021) </li>
-  <li>Excel - Senai / Leopoldina (2019)</li>
-</ul>
-
+        <li>Cursando Análise e Desenvolvimento de Sistemas</li>
+        <li>Inglês em desenvolvimento (estudando atualmente)</li>
+        <li>Conhecimentos: HTML, CSS, JavaScript, Python, Banco de Dados</li>
+        <li>Power BI - Data B(2022)</li>
+        <li>Dashboard - Hashtag Treinamentos (2021) </li>
+        <li>Excel - Senai / Leopoldina (2019)</li>
+      </ul>
     </section>
 
+    <!-- Seção de portfólio com projetos -->
     <section id="projetos">
       <h2>Portfólio</h2>
 
+      <!-- Projeto 1 -->
       <div class="card">
         <h3>Sistema de Livraria</h3>
         <p>Sistema desenvolvido em Python.</p>
         <a href="https://github.com/AlexGuilhermess/livraria" target="_blank">Ver projeto no GitHub</a>
       </div>
 
+      <!-- Projeto 2 -->
       <div class="card">
         <h3>Sistema de Copiadora</h3>
         <p>Sistema desenvolvido em Python.</p>
         <a href="https://github.com/alexguilhermess/copiadora" target="_blank">Ver projeto no GitHub</a>
       </div>
 
+      <!-- Projeto 3 -->
       <div class="card">
         <h3>Locadora de Veículos</h3>
         <p>Banco de dados relacional utilizando MySQL</p>
@@ -63,52 +71,59 @@ Encaro a tecnologia como uma ferramenta de transformação, e gosto de entender 
       </div>
     </section>
 
+    <!-- Seção de formulário de contato -->
     <section id="contato">
       <h2>Contato</h2>
       <form>
+        <!-- Campo de nome -->
         <label for="nome">Nome</label>
         <input type="text" id="nome" name="nome">
 
+        <!-- Campo de e-mail -->
         <label for="email">Email</label>
         <input type="email" id="email" name="email">
 
+        <!-- Campo de mensagem -->
         <label for="mensagem">Mensagem</label>
         <textarea id="mensagem" name="mensagem"></textarea>
 
+        <!-- Botão para enviar o formulário -->
         <button type="submit">Enviar</button>
       </form>
     </section>
   </div>
-  <script>
-  // Quando a página carregar
-  document.addEventListener("DOMContentLoaded", function () {
-    const links = document.querySelectorAll("nav a");
-    const sections = document.querySelectorAll("section");
 
-    // Esconde todas as seções
+  <!-- Código JavaScript para controlar a navegação das seções -->
+  <script>
+  // Quando o conteúdo da página estiver pronto
+  document.addEventListener("DOMContentLoaded", function () {
+    const links = document.querySelectorAll("nav a"); // Seleciona todos os links do menu
+    const sections = document.querySelectorAll("section"); // Seleciona todas as seções
+
+    // Função para esconder todas as seções
     function esconderTodas() {
       sections.forEach(sec => sec.style.display = "none");
     }
 
-    // Exibe a seção ativa com base no ID
+    // Função para mostrar apenas a seção clicada
     function mostrarSecao(id) {
       esconderTodas();
       const secao = document.querySelector(id);
       if (secao) secao.style.display = "block";
     }
 
-    // Ao clicar no link, mostra só a seção clicada
+    // Quando clicar em um link do menu
     links.forEach(link => {
       link.addEventListener("click", function (e) {
-        e.preventDefault(); // Evita scroll automático
-        const alvo = this.getAttribute("href");
+        e.preventDefault(); // Evita que a página role para a seção
+        const alvo = this.getAttribute("href"); // Pega o ID da seção clicada
         mostrarSecao(alvo);
       });
     });
 
-    // Exibe a seção inicial padrão
-    mostrarSecao("#sobre");
+    // Mostra a seção padrão ao abrir a página
+    mostrarSecao("#inicio");
   });
-</script>
+  </script>
 </body>
 </html>
